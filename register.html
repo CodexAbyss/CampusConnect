@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusConnect | Registration</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-content">
+            <a class="logo" href="index.html">Campus<span>Connect</span></a>
+            <nav aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="events.html">Events</a>
+                <a class="active" href="register.html">Registration</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container page-main narrow">
+        <section class="page-intro">
+            <p class="eyebrow">TAKE PART</p>
+            <h1 id="registrationHeading">Register for an Event</h1>
+            <p>Fill in your details to see a sample confirmation. This is a front-end demonstration only.</p>
+            <div class="button-row">
+                <button type="button" class="secondary" id="changeFontSizeBtn">Change Heading Font Size</button>
+                <button type="button" class="secondary" id="toggleFormBtn">Show / Hide Form</button>
+            </div>
+        </section>
+
+        <section class="form-panel" id="registrationFormPanel">
+            <form id="registrationForm" novalidate>
+                <div class="field">
+                    <label for="studentName">Student Name</label>
+                    <input type="text" id="studentName" placeholder="Enter your full name">
+                </div>
+                <div class="field">
+                    <label for="rollNumber">Student Roll Number</label>
+                    <input type="text" id="rollNumber" placeholder="Enter your roll number">
+                </div>
+                <div class="field">
+                    <label for="emailAddress">Email Address</label>
+                    <input type="email" id="emailAddress" placeholder="name@example.com">
+                </div>
+                <div class="field">
+                    <label for="eventSelection">Event Selection</label>
+                    <select id="eventSelection">
+                        <option value="">-- Select an event --</option>
+                        <option value="CodeSprint 2026">CodeSprint 2026</option>
+                        <option value="Udaan Cultural Night">Udaan Cultural Night</option>
+                        <option value="Inter-College Sports Meet">Inter-College Sports Meet</option>
+                        <option value="AI & Cloud Workshop">AI & Cloud Workshop</option>
+                    </select>
+                </div>
+                <button type="submit">Register</button>
+                <p id="registrationMessage" class="message" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">CampusConnect · A student-made campus event demo</div>
+    </footer>
+</body>
+</html>

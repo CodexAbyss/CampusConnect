@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusConnect | Events</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-content">
+            <a class="logo" href="index.html">Campus<span>Connect</span></a>
+            <nav aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a class="active" href="events.html">Events</a>
+                <a href="register.html">Registration</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container page-main">
+        <section class="page-intro">
+            <p class="eyebrow">WHAT'S ON</p>
+            <h1>Explore Campus Events</h1>
+            <p>Browse the event list and add an event name below to try the page's JavaScript interaction.</p>
+        </section>
+
+        <section class="section-block">
+            <div class="card-grid">
+                <article class="event-card" id="eventCard1">
+                    <span class="event-tag">TECHNOLOGY</span>
+                    <h2>CodeSprint 2026</h2>
+                    <p class="event-date">Date: 18 October 2026</p>
+                    <p><strong>Venue:</strong> Computer Lab 2</p>
+                    <p>Team up or code solo in a beginner-friendly programming challenge.</p>
+                </article>
+                <article class="event-card" id="eventCard2">
+                    <span class="event-tag">CULTURE</span>
+                    <h2>Udaan Cultural Night</h2>
+                    <p class="event-date">Date: 24 October 2026</p>
+                    <p><strong>Venue:</strong> Main Auditorium</p>
+                    <p>Enjoy music, dance, drama, and performances by students.</p>
+                </article>
+                <article class="event-card" id="eventCard3">
+                    <span class="event-tag">SPORTS</span>
+                    <h2>Inter-College Sports Meet</h2>
+                    <p class="event-date">Date: 2 November 2026</p>
+                    <p><strong>Venue:</strong> College Sports Ground</p>
+                    <p>Cheer for your college in a range of friendly sporting events.</p>
+                </article>
+                <article class="event-card" id="eventCard4">
+                    <span class="event-tag">LEARNING</span>
+                    <h2>AI & Cloud Workshop</h2>
+                    <p class="event-date">Date: 8 November 2026</p>
+                    <p><strong>Venue:</strong> Seminar Hall A</p>
+                    <p>Get an introduction to cloud computing and practical AI applications.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="form-panel">
+            <p class="eyebrow">ADD TO THE LIST</p>
+            <h2>Suggest an Event</h2>
+            <label for="eventNameInput">Event name</label>
+            <div class="input-row">
+                <input type="text" id="eventNameInput" placeholder="e.g. Photography Walk">
+                <button type="button" id="addEventBtn">Add Event</button>
+            </div>
+            <p id="eventMessage" class="message" aria-live="polite"></p>
+            <div id="addedEventArea" class="added-event-area"></div>
+        </section>
+
+        <section class="form-panel">
+            <h2>Try an Event Card Change</h2>
+            <p>Click the button to change the appearance of the first event card.</p>
+            <button type="button" id="changeEventCardBtn" class="secondary">Change First Event Card</button>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">CampusConnect · A student-made campus event demo</div>
+    </footer>
+</body>
+</html>

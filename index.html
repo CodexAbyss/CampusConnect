@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusConnect | Home</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body> 
+    <header class="site-header">
+        <div class="container header-content">
+            <a class="logo" href="index.html">Campus<span>Connect</span></a>
+            <nav aria-label="Main navigation">
+                <a class="active" href="index.html">Home</a>
+                <a href="events.html">Events</a>
+                <a href="register.html">Registration</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <p class="eyebrow">YOUR CAMPUS, YOUR COMMUNITY</p>
+            <h1 id="mainHeading">Discover What's Happening on Campus</h1>
+            <p class="hero-text">Find exciting college events, meet new people, and make your campus life memorable.</p>
+            <div class="button-row">
+                <button type="button" id="changeHeadingBtn">Change Main Heading</button>
+                <a class="button secondary" href="events.html">Explore Events</a>
+            </div>
+        </section>
+
+        <section class="section-block">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">SAVE YOUR SPOT</p>
+                    <h2>Upcoming Events</h2>
+                </div>
+                <button type="button" class="secondary" id="changeCardColorBtn">Change Card Colour</button>
+            </div>
+            <div class="card-grid">
+                <article class="event-card" id="homeCard1">
+                    <span class="event-tag">TECHNOLOGY</span>
+                    <h3>CodeRush</h3>
+                    <p class="event-date">12 October 2026</p>
+                    <p>A beginner code challenege for only 1st year students where you can learn,interact and determine your level.</p>
+                </article>
+                <article class="event-card" id="homeCard2">
+                    <span class="event-tag">CULTURE</span>
+                    <h3>Dandiya Night</h3>
+                    <p class="event-date">20 October 2026</p>
+                    <p>Celebrate Dandiya Night with music, dance and creative showcases.</p>
+                </article>
+                <article class="event-card" id="homeCard3">
+                    <span class="event-tag">SPORTS</span>
+                    <h3>Inter-College Sports Meet</h3>
+                    <p class="event-date">2 November 2026</p>
+                    <p>Support your teams and take part in a day full of energy and sportsmanship.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="highlight-panel" id="eventHighlights">
+            <div>
+                <p class="eyebrow">WHY JOIN?</p>
+                <h2>Make More of College Life</h2>
+            </div>
+            <ul class="highlight-list">
+                <li>Meet students with similar interests.</li>
+                <li>Practise teamwork and communication.</li>
+                <li>Discover new skills outside the classroom.</li>
+            </ul>
+        </section>
+        <div class="centered">
+            <button type="button" class="secondary" id="toggleHighlightsBtn">Show / Hide Event Highlights</button>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">CampusConnect · A student-made campus event demo</div>
+    </footer>
+</body>
+</html>

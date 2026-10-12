@@ -1,0 +1,391 @@
+/* CampusConnect shared styles: dark theme, CSS box model, and Flexbox. */
+:root {
+   --background: #0b1020;
+    --surface: #151d31;
+    --surface-light: #1c2840;
+    --text: #f3f6ff;
+    --muted: #aab5cc;
+    --accent: #7c8cff;
+    --accent-hover: #9ba6ff;
+    --border: #2c3955;
+    --success: #7ce0b0;
+    --error: #ff8e9b;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+}
+
+.site-header {
+    background: #0e1528;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.header-content {
+    min-height: 74px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.logo {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+nav a {
+    color: var(--muted);
+    text-decoration: none;
+    padding: 9px 13px;
+    border-radius: 9px;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--text);
+    background: var(--surface-light);
+}
+
+.hero {
+    padding: 76px 0 54px;
+    max-width: 800px;
+}
+
+.eyebrow {
+    color: var(--accent);
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin: 0 0 10px;
+}
+
+h1, h2, h3, p {
+    margin-top: 0;
+}
+
+h1 {
+    font-size: clamp(2.1rem, 5vw, 3.7rem);
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    margin-bottom: 18px;
+}
+
+h2 {
+    font-size: 1.55rem;
+    line-height: 1.25;
+    margin-bottom: 12px;
+}
+
+h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.hero-text,
+.page-intro > p:not(.eyebrow),
+.event-card p,
+.form-panel > p:not(.eyebrow) {
+    color: var(--muted);
+}
+
+.hero-text {
+    max-width: 650px;
+    font-size: 1.08rem;
+}
+
+.button-row,
+.section-heading,
+.input-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+}
+
+button,
+.button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: 11px 16px;
+    background: var(--accent);
+    color: #0b1020;
+    font: inherit;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+button:hover,
+.button:hover {
+    background: var(--accent-hover);
+    transform: translateY(-1px);
+}
+
+button.secondary,
+.button.secondary {
+    background: transparent;
+    color: var(--text);
+    border-color: var(--border);
+}
+
+button.secondary:hover,
+.button.secondary:hover {
+    background: var(--surface-light);
+}
+
+.section-block {
+    padding: 25px 0 35px;
+}
+
+.section-heading {
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.section-heading h2 {
+    margin-bottom: 0;
+}
+
+.card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.event-card {
+    flex: 1 1 240px;
+    min-width: 0;
+    padding: 23px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.event-card h2 {
+    font-size: 1.25rem;
+}
+
+.event-card p:last-child {
+    margin-bottom: 0;
+}
+
+.event-tag {
+    display: inline-block;
+    color: var(--accent-hover);
+    background: rgba(124, 140, 255, 0.12);
+    border-radius: 999px;
+    padding: 4px 9px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+}
+
+.event-date {
+    color: var(--success) !important;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.highlight-panel,
+.form-panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 25px;
+    margin: 22px 0;
+}
+
+.highlight-panel {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.highlight-panel h2 {
+    margin-bottom: 0;
+}
+
+.highlight-list {
+    color: var(--muted);
+    margin: 0;
+    padding-left: 22px;
+}
+
+.highlight-list li {
+    margin-bottom: 7px;
+}
+
+.centered {
+    text-align: center;
+    padding: 0 0 28px;
+}
+
+.page-main {
+    padding-top: 48px;
+    padding-bottom: 48px;
+}
+
+.page-intro {
+    max-width: 760px;
+    margin-bottom: 25px;
+}
+
+.page-intro h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.narrow {
+    max-width: 760px;
+}
+
+.form-panel h2 {
+    margin-bottom: 16px;
+}
+
+label {
+    display: block;
+    color: var(--text);
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+
+input,
+select {
+    width: 100%;
+    min-width: 0;
+    background: #0e1528;
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    padding: 12px 13px;
+    font: inherit;
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(124, 140, 255, 0.15);
+}
+
+.input-row input {
+    flex: 1 1 230px;
+}
+
+.field {
+    margin-bottom: 17px;
+}
+
+.message {
+    margin: 12px 0 0;
+    font-weight: 700;
+}
+
+.message.success {
+    color: var(--success);
+}
+
+.message.error {
+    color: var(--error);
+}
+
+.added-event-area {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.added-event {
+    background: var(--surface-light);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 15px;
+    color: var(--text);
+}
+
+.site-footer {
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    padding: 22px 0;
+    font-size: 0.9rem;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.card-highlight {
+    background: #263454;
+    border-color: var(--accent);
+}
+
+@media (max-width: 620px) {
+    .header-content {
+        align-items: flex-start;
+        flex-direction: column;
+        padding-top: 14px;
+        padding-bottom: 14px;
+        gap: 10px;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    nav a {
+        padding: 8px 10px;
+    }
+
+    .hero {
+        padding-top: 48px;
+    }
+
+    .highlight-panel {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
