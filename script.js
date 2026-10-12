@@ -1,130 +1,118 @@
+// Small JavaScript activities for the CampusConnect website
 
- // HOME PAGE: Change the main heading
-const changeHeadingBtn = document.getElementById("changeHeadingBtn");
-
-if (changeHeadingBtn) {
-    changeHeadingBtn.addEventListener("click", function () {
-        const heading = document.getElementById("mainHeading");
-        heading.textContent = "Your Next Campus Adventure Starts Here!";
-    });
+var headingButton = document.getElementById("changeHeadingBtn");
+if (headingButton) {
+    headingButton.onclick = function () {
+        document.getElementById("mainHeading").textContent = "Make your campus life memorable!";
+    };
 }
 
-// HOME PAGE: Change the background colour of an event card
-const changeCardColorBtn = document.getElementById("changeCardColorBtn");
-
-if (changeCardColorBtn) {
-    changeCardColorBtn.addEventListener("click", function () {
-        const card = document.getElementById("homeCard1");
-        card.classList.toggle("card-highlight");
-    });
+var colourButton = document.getElementById("changeCardColorBtn");
+if (colourButton) {
+    colourButton.onclick = function () {
+        var cards = document.querySelectorAll("#homeCards .event-card");
+        for (var i = 0; i < cards.length; i++) {
+            cards[i].style.backgroundColor = "#30202a";
+        }
+    };
 }
 
-// HOME PAGE: Show or hide the event highlights section
-const toggleHighlightsBtn = document.getElementById("toggleHighlightsBtn");
-
-if (toggleHighlightsBtn) {
-    toggleHighlightsBtn.addEventListener("click", function () {
-        const highlights = document.getElementById("eventHighlights");
-        highlights.classList.toggle("hidden");
-    });
+var highlightButton = document.getElementById("toggleHighlightsBtn");
+if (highlightButton) {
+    highlightButton.onclick = function () {
+        var cards = document.getElementById("homeCards");
+        if (cards.style.display === "none") {
+            cards.style.display = "flex";
+            highlightButton.textContent = "Hide Highlights";
+        } else {
+            cards.style.display = "none";
+            highlightButton.textContent = "Show Highlights";
+        }
+    };
 }
 
-// EVENTS PAGE: Add an event name
-const addEventBtn = document.getElementById("addEventBtn");
-
-if (addEventBtn) {
-    addEventBtn.addEventListener("click", function () {
-        const eventInput = document.getElementById("eventNameInput");
-        const eventMessage = document.getElementById("eventMessage");
-        const addedEventArea = document.getElementById("addedEventArea");
-        const eventName = eventInput.value.trim();
+var addButton = document.getElementById("addEventBtn");
+if (addButton) {
+    addButton.onclick = function () {
+        var eventName = document.getElementById("newEventName").value.trim();
+        var eventArea = document.getElementById("allEvents");
+        var eventMessage = document.getElementById("eventMessage");
 
         if (eventName === "") {
             eventMessage.textContent = "Please enter an event name first.";
-            eventMessage.className = "message error";
-            return;
+        } else {
+            var newCard = document.createElement("div");
+            newCard.className = "event-card";
+
+            var title = document.createElement("h3");
+            title.textContent = eventName;
+
+            var info = document.createElement("p");
+            info.textContent = "New campus event added for practice.";
+
+            newCard.appendChild(title);
+            newCard.appendChild(info);
+            eventArea.appendChild(newCard);
+
+            document.getElementById("newEventName").value = "";
+            eventMessage.textContent = "Event added successfully!";
         }
-
-        // Create a new element to display the event name
-        const newEvent = document.createElement("div");
-        newEvent.classList.add("added-event");
-        newEvent.textContent = eventName;
-        addedEventArea.appendChild(newEvent);
-
-        eventMessage.textContent = "Event name submitted successfully!";
-        eventMessage.className = "message success";
-        eventInput.value = "";
-    });
+    };
 }
 
-// EVENTS PAGE: Change the appearance of the first event card
-const changeEventCardBtn = document.getElementById("changeEventCardBtn");
-
-if (changeEventCardBtn) {
-    changeEventCardBtn.addEventListener("click", function () {
-        const eventCard = document.getElementById("eventCard1");
-        eventCard.classList.toggle("card-highlight");
-    });
+var firstEventButton = document.getElementById("changeEventCardBtn");
+if (firstEventButton) {
+    firstEventButton.onclick = function () {
+        var firstCard = document.querySelector("#allEvents .event-card");
+        if (firstCard) {
+            firstCard.style.borderColor = "#ff4d5a";
+            firstCard.style.backgroundColor = "#30202a";
+        }
+    };
 }
 
-// REGISTRATION PAGE: Validate fields and show confirmation
-const registrationForm = document.getElementById("registrationForm");
-
-if (registrationForm) {
-    registrationForm.addEventListener("submit", function (event) {
-        // Prevent the page from reloading
+var registerForm = document.getElementById("registrationForm");
+if (registerForm) {
+    registerForm.onsubmit = function (event) {
         event.preventDefault();
 
-        const studentName = document.getElementById("studentName").value.trim();
-        const rollNumber = document.getElementById("rollNumber").value.trim();
-        const emailAddress = document.getElementById("emailAddress").value.trim();
-        const eventSelection = document.getElementById("eventSelection").value;
-        const registrationMessage = document.getElementById("registrationMessage");
+        var name = document.getElementById("studentName").value.trim();
+        var email = document.getElementById("studentEmail").value.trim();
+        var roll = document.getElementById("studentRoll").value.trim();
+        var chosenEvent = document.getElementById("eventChoice").value;
+        var formMessage = document.getElementById("formMessage");
 
-        // Check whether any required field is empty
-        if (
-            studentName === "" ||
-            rollNumber === "" ||
-            emailAddress === "" ||
-            eventSelection === ""
-        ) {
-            registrationMessage.textContent =
-                "Error: Please fill in all required fields.";
-            registrationMessage.className = "message error";
-            return;
-        }
-
-        // Display a personalised confirmation
-        registrationMessage.textContent =
-            "Thank you, " + studentName +
-            "! Your sample registration for " +
-            eventSelection + " is confirmed.";
-
-        registrationMessage.className = "message success";
-    });
-}
-
-// REGISTRATION PAGE: Change the heading font size
-const changeFontSizeBtn = document.getElementById("changeFontSizeBtn");
-
-if (changeFontSizeBtn) {
-    changeFontSizeBtn.addEventListener("click", function () {
-        const heading = document.getElementById("registrationHeading");
-
-        if (heading.style.fontSize === "2rem") {
-            heading.style.fontSize = "3rem";
+        if (name === "" || email === "" || roll === "" || chosenEvent === "") {
+            formMessage.textContent = "Please fill in every field.";
         } else {
-            heading.style.fontSize = "2rem";
+            formMessage.textContent = "Thanks, " + name + "! You are registered for " + chosenEvent + ".";
+            registerForm.reset();
         }
-    });
+    };
 }
 
-// REGISTRATION PAGE: Show or hide the registration form
-const toggleFormBtn = document.getElementById("toggleFormBtn");
+var fontButton = document.getElementById("changeFontSizeBtn");
+if (fontButton) {
+    fontButton.onclick = function () {
+        var formBox = document.querySelector(".form-box");
+        if (formBox.style.fontSize === "18px") {
+            formBox.style.fontSize = "16px";
+        } else {
+            formBox.style.fontSize = "18px";
+        }
+    };
+}
 
-if (toggleFormBtn) {
-    toggleFormBtn.addEventListener("click", function () {
-        const formPanel = document.getElementById("registrationFormPanel");
-        formPanel.classList.toggle("hidden");
-    });
+var hideFormButton = document.getElementById("toggleFormBtn");
+if (hideFormButton) {
+    hideFormButton.onclick = function () {
+        var form = document.getElementById("registrationForm");
+        if (form.style.display === "none") {
+            form.style.display = "block";
+            hideFormButton.textContent = "Hide Form";
+        } else {
+            form.style.display = "none";
+            hideFormButton.textContent = "Show Form";
+        }
+    };
 }
