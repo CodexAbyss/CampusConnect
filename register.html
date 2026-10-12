@@ -3,65 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CampusConnect | Registration</title>
+    <title>CampusConnect | Register</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
-    <header class="site-header">
-        <div class="container header-content">
-            <a class="logo" href="index.html">Campus<span>Connect</span></a>
-            <nav aria-label="Main navigation">
+    <header class="top">
+        <nav class="nav">
+            <h2>CampusConnect</h2>
+            <div class="links">
                 <a href="index.html">Home</a>
                 <a href="events.html">Events</a>
-                <a class="active" href="register.html">Registration</a>
-            </nav>
-        </div>
+                <a href="register.html">Register</a>
+            </div>
+        </nav>
     </header>
 
-    <main class="container page-main narrow">
-        <section class="page-intro">
-            <p class="eyebrow">TAKE PART</p>
-            <h1 id="registrationHeading">Register for an Event</h1>
-            <p>Fill in your details to see a sample confirmation. This is a front-end demonstration only.</p>
-            <div class="button-row">
-                <button type="button" class="secondary" id="changeFontSizeBtn">Change Heading Font Size</button>
-                <button type="button" class="secondary" id="toggleFormBtn">Show / Hide Form</button>
-            </div>
-        </section>
+    <main class="section page-area">
+        <p class="small-title">SAVE YOUR SPOT</p>
+        <h1>Event Registration</h1>
+        <p class="muted">Fill in your details to register for a campus event.</p>
 
-        <section class="form-panel" id="registrationFormPanel">
-            <form id="registrationForm" novalidate>
-                <div class="field">
-                    <label for="studentName">Student Name</label>
-                    <input type="text" id="studentName" placeholder="Enter your full name">
-                </div>
-                <div class="field">
-                    <label for="rollNumber">Student Roll Number</label>
-                    <input type="text" id="rollNumber" placeholder="Enter your roll number">
-                </div>
-                <div class="field">
-                    <label for="emailAddress">Email Address</label>
-                    <input type="email" id="emailAddress" placeholder="name@example.com">
-                </div>
-                <div class="field">
-                    <label for="eventSelection">Event Selection</label>
-                    <select id="eventSelection">
-                        <option value="">-- Select an event --</option>
-                        <option value="CodeSprint 2026">CodeRush</option>
-                        <option value="Udaan Cultural Night">Dandiya Night</option>
-                        <option value="Inter-College Sports Meet">Inter-College Sports Meet</option>
-                        <option value="AI & Cloud Workshop">AI & Cloud Workshop</option>
-                    </select>
-                </div>
-                <button type="submit">Register</button>
-                <p id="registrationMessage" class="message" aria-live="polite"></p>
+        <div class="form-box">
+            <form id="registrationForm">
+                <label for="studentName">Full name</label>
+                <input type="text" id="studentName" placeholder="Enter your name">
+
+                <label for="studentEmail">College email</label>
+                <input type="email" id="studentEmail" placeholder="name@example.com">
+
+                <label for="studentRoll">Roll number</label>
+                <input type="text" id="studentRoll" placeholder="Enter your roll number">
+
+                <label for="eventChoice">Choose event</label>
+                <select id="eventChoice">
+                    <option value="">Select an event</option>
+                    <option value="Code Sprint">Code Sprint</option>
+                    <option value="Campus Beats">Campus Beats</option>
+                    <option value="Sports Day">Sports Day</option>
+                </select>
+
+                <button type="submit" class="btn">Submit Registration</button>
+                <button type="button" class="btn second" id="changeFontSizeBtn">Change Text Size</button>
+                <button type="button" class="btn second" id="toggleFormBtn">Hide Form</button>
+                <p id="formMessage" class="message"></p>
             </form>
-        </section>
+        </div>
     </main>
 
-    <footer class="site-footer">
-        <div class="container">CampusConnect · A student-made campus event demo</div>
-    </footer>
+    <footer><p>CampusConnect · Made for students</p></footer>
 </body>
 </html>
